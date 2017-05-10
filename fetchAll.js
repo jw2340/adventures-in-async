@@ -46,7 +46,7 @@ function promisifiedFetchUrl(pathname) {
 
 // if fetchUrl returns a promise and node runtime supports async/await
 async function fetchAllWithPromises(promisifiedFetchFunc, path, ...idArgs) {
-  if (!fetchFunc || !path || idArgs.length === 0) {
+  if (!promisifiedFetchFunc || !path || idArgs.length === 0) {
     throw new Error('fetchAllWithPromises requires a function, path, and at least one id');
   }
   const arrayOfPromises = [];
